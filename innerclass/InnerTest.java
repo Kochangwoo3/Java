@@ -12,13 +12,13 @@ class OutClass {   // 외부 클래스
 	
 	class InClass {  // 인스턴스 내부 클래스
 		int inNum = 100;  // 내부클래스의 인스턴스 변수
-//		static int sInNum = 200;    // 오류
+//		static int sInNum = 200;   
 		
 		void inTest() {
 			System.out.println("OutClass num = " + num + "(외부클래스 인스턴스 변수)");
 			System.out.println("OutClass sNum = " + sNum + "(외부클래스의 정적 변수)");
 		}
-////		static void sTest() {  // 오류
+//		static void sTest() {
 //			
 //		}
 	}
@@ -44,6 +44,13 @@ public class InnerTest {
 //		OutClass.InClass inClass = outClass.new InClass();
 //		
 //		inClass.inTest();
+		
+		
+		try(AutoCloseObj obj = new AutoCloseObj()){    //
+			throw new Exception();
+		}catch(Exception e) {
+			System.out.println("예외부분입니다.");
+		}
 		
 	}
 
